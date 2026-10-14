@@ -1,0 +1,15 @@
+# Niente in custom/ è un entry point: questi file vengono solo include-ati
+# da api/ (api/custom_calls.php, api/public_calls.php). Gli include di PHP
+# sono a livello di filesystem e non passano da Apache, quindi negare
+# l'accesso HTTP qui non rompe nessuna chiamata API.
+
+# Apache 2.4
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+
+# Apache 2.2 (o 2.4 senza mod_authz_core)
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+</IfModule>

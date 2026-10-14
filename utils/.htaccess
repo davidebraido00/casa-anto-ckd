@@ -1,0 +1,22 @@
+# Utility di manutenzione (createdb, updatedb, validazione tabelle):
+# raggiungibili via HTTP SOLO dagli IP elencati qui sotto.
+#
+# utils/ è interamente del framework e viene sostituita in blocco a ogni
+# allineamento: NON modificare questo file in un progetto, la modifica
+# verrebbe persa. Per aggiungere o cambiare un IP, farlo nel template
+# e riallineare; per un accesso una tantum da un altro IP, aprire e
+# richiudere subito, oppure lavorare dal server.
+
+# Apache 2.4
+<IfModule mod_authz_core.c>
+    <RequireAny>
+        Require ip 95.231.211.146
+    </RequireAny>
+</IfModule>
+
+# Apache 2.2 (o 2.4 senza mod_authz_core)
+<IfModule !mod_authz_core.c>
+    Order deny,allow
+    Deny from all
+    Allow from 95.231.211.146
+</IfModule>

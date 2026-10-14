@@ -1,0 +1,585 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"properties": {
+		"$schema": {
+			"type": "string"
+		},
+		"user": {
+			"description": "Manage the user table",
+			"type": "object",
+			"required": ["primary_key", "default_key", "columns", "authorization", "permissions"],
+			"properties": {
+				"primary_key": {
+					"$ref": "#/definitions/primary_key"
+				},
+				"default_key":{
+					"$ref": "#/definitions/default_key"
+				},
+				"authorization": {
+					"$ref": "#/definitions/authorization",
+					"required": ["groupField", "userField"]
+				},
+				"columns": {
+					"$ref": "#/definitions/columns",
+					"required": [
+						"id", 
+						"date" , 
+						"lastUpdate" , 
+						"deleted" , 
+						"name" , 
+						"surname" , 
+						"username" , 
+						"email" , 
+						"password" , 
+						"level" , 
+						"idUserGroup" , 
+						"avatar"
+					]
+				},
+				"permissions": {
+					"$ref": "#/definitions/permissions",
+					"required": ["0"]
+				}
+			},
+			"additionalProperties": false
+		},
+		"user_group": {
+			"description": "entity for group management",
+			"type": "object",
+			"required": ["primary_key", "default_key", "columns", "authorization", "permissions"],
+			"properties": {
+				"primary_key": {
+					"$ref": "#/definitions/primary_key"
+				},
+				"default_key":{
+					"$ref": "#/definitions/default_key"
+				},
+				"authorization": {
+					"$ref": "#/definitions/authorization",
+					"required": ["groupField"]
+				},
+				"columns": {
+					"$ref": "#/definitions/columns",
+					"required": [
+						"id", 
+						"date" , 
+						"lastUpdate" , 
+						"deleted" , 
+						"name"
+					]
+				},
+				"permissions": {
+					"$ref": "#/definitions/permissions",
+					"required": ["0"]
+				}
+			},
+			"additionalProperties": false
+		},
+		"auth_token": {
+			"description": "entity storage the JWTs",
+			"type": "object",
+			"required": ["primary_key", "columns", "permissions"],
+			"properties": {
+				"primary_key": {
+					"$ref": "#/definitions/primary_key"
+				},
+				"default_key":{
+					"$ref": "#/definitions/default_key"
+				},
+				"authorization": {
+					"$ref": "#/definitions/authorization",
+					"required": ["groupField", "userField"]
+				},
+				"columns": {
+					"$ref": "#/definitions/columns",
+					"required": [
+						"id", 
+						"date" , 
+						"lastUpdate" , 
+						"deleted" , 
+						"sid",
+						"ltsid"
+					]
+				},
+				"permissions": {
+					"$ref": "#/definitions/permissions"
+				}
+			}
+		},
+		"auth_pin": {
+			"description": "Manage the user table",
+			"type": "object",
+			"required": ["primary_key", "columns", "permissions"],
+			"properties": {
+				"primary_key": {
+					"$ref": "#/definitions/primary_key"
+				},
+				"default_key":{
+					"$ref": "#/definitions/default_key"
+				},
+				"authorization": {
+					"$ref": "#/definitions/authorization",
+					"required": ["groupField", "userField"]
+				},
+				"columns": {
+					"$ref": "#/definitions/columns",
+					"required": [
+						"id", 
+						"date" , 
+						"lastUpdate" , 
+						"deleted" , 
+						"pin"
+					]
+				},
+				"permissions": {
+					"$ref": "#/definitions/permissions"
+				}
+			},
+			"propertyNames": {
+				"not": {
+					"enum": ["accessible", "add", "all", "alter", "analyze", "and", "as", "asc", "asensitive", "before", "between", "bigint", "binary", "blob", "both", "by", "call", "cascade", "case", "change", "char", "character", "check", "collate", "column", "condition", "constraint", "continue", "convert", "create", "cross", "current_date", "current_time", "current_timestamp", "current_user", "cursor", "database", "databases", "day_hour", "day_microsecond", "day_minute", "day_second", "dec", "decimal", "declare", "default", "delayed", "delete", "desc", "describe", "deterministic", "distinct", "distinctrow", "div", "double", "drop", "dual", "each", "else", "elseif", "enclosed", "escaped", "exists", "exit", "explain", "false", "fetch", "float", "float4", "float8", "for", "force", "foreign", "from", "fulltext", "generated", "get", "grant", "group", "having", "high_priority", "hour_microsecond", "hour_minute", "hour_second", "if", "ignore", "in", "index", "infile", "inner", "inout", "insensitive", "insert", "int", "int1", "int2", "int3", "int4", "int8", "integer", "interval", "into", "is", "iterate", "join", "key", "keys", "kill", "leading", "leave", "left", "like", "limit", "linear", "lines", "load", "localtime", "localtimestamp", "lock", "long", "longblob", "longtext", "loop", "low_priority", "master_ssl_verify_server_cert", "match", "maxvalue", "mediumblob", "mediumint", "mediumtext", "middleint", "minute_microsecond", "minute_second", "mod", "modifies", "natural", "not", "no_write_to_binlog", "null", "numeric", "on", "optimize", "option", "or", "order", "out", "outer", "outfile", "partition", "precision", "primary", "procedure", "purge", "range", "read", "reads", "read_write", "real", "references", "regexp", "release", "rename", "repeat", "replace", "require", "resignal", "restrict", "return", "revoke", "right", "rlike", "schema", "schemas", "second_microsecond", "select", "sensitive", "separator", "set", "show", "signal", "smallint", "spatial", "specific", "sql", "sqlexception", "sqlstate", "sqlwarning", "sql_big_result", "sql_calc_found_rows", "sql_small_result", "ssl", "starting", "stored", "straight_join", "table", "terminated", "then", "tinyblob", "tinyint", "tinytext", "to", "trailing", "trigger", "true", "undo", "union", "unique", "unlock", "unsigned", "update", "usage", "use", "using", "utc_date", "utc_time", "utc_timestamp", "values", "varbinary", "varchar", "varcharacter", "varying", "virtual", "when", "where", "while", "with", "write", "xor", "year_month", "zerofill"]
+				}
+			},
+			"additionalProperties": false
+		},
+		"resource": {
+			"description": "entity for file management",
+			"type": "object",
+			"required": ["primary_key", "default_key", "columns", "permissions"],
+			"properties": {
+				"primary_key": {
+					"$ref": "#/definitions/primary_key"
+				},
+				"default_key":{
+					"$ref": "#/definitions/default_key"
+				},
+				"authorization": {
+					"$ref": "#/definitions/authorization",
+					"required": ["groupField", "userField"]
+				},
+				"columns": {
+					"$ref": "#/definitions/columns",
+					"required": [
+						"id", 
+						"date" , 
+						"lastUpdate" , 
+						"deleted" , 
+						"idUser" , 
+						"entity" , 
+						"filename" , 
+						"hash" , 
+						"extension"
+					]
+				},
+				"permissions": {
+					"$ref": "#/definitions/permissions",
+					"required": ["0"]
+				}
+			},
+			"additionalProperties": false
+		},
+		"log": {
+			"description": "entity log every action",
+			"type": "object",
+			"required": ["primary_key", "default_key", "columns", "permissions"],
+			"properties": {
+				"primary_key": {
+					"$ref": "#/definitions/primary_key"
+				},
+				"default_key":{
+					"$ref": "#/definitions/default_key"
+				},
+				"authorization": {
+					"$ref": "#/definitions/authorization",
+					"required": ["groupField", "userField"]
+				},
+				"columns": {
+					"$ref": "#/definitions/columns",
+					"required": [
+						"id", 
+						"date" , 
+						"lastUpdate" , 
+						"deleted" , 
+						"idUser" , 
+						"entity" , 
+						"idItem" , 
+						"operation" , 
+						"notes"
+					]
+				},
+				"permissions": {
+					"$ref": "#/definitions/permissions",
+					"required": ["0"]
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": {
+		"description": "a new entity",
+		"type": "object",
+		"required": ["primary_key", "columns", "permissions"],
+		"properties": {
+			"primary_key": {
+				"$ref": "#/definitions/primary_key"
+			},
+			"default_key": {
+				"type": "string"
+			},
+			"columns": {
+				"$ref": "#/definitions/columns"
+			},
+			"callback_entity": {
+				"$ref": "#/definitions/callback_entity"
+			},
+			"reference_entity": {
+				"$ref": "#/definitions/reference_entity"
+			},
+			"authorization": {
+				"$ref": "#/definitions/authorization"
+			},
+			"permissions": {
+				"$ref": "#/definitions/permissions",
+				"required": ["0"]
+			},
+			"annotation":{"type":"string"},
+			"annotations":{"type":"string"},
+			"comment":{"type":"string"}
+		},
+		"additionalProperties": false
+	},
+	"definitions": {
+		"primary_key": {
+			"description": "Define the table PK",
+			"type": "string",
+			"$comment": "check if this is in columns"
+		},
+		"default_key": {
+			"type": "string",
+			"$comment": "check if this is in columns"
+		},
+		"columns": {
+			"type": "object",
+			"additionalProperties": {
+				"type": "object",
+				"description": "column in db table",
+				"properties": {
+					"type": {
+						"type": "string",
+						"enum": ["VARCHAR", "INT", "DATE", "DATETIME", "TIME", "TIMESTAMP", "TEXT", "NONE", "DECIMAL"],
+						"description": "define the db column type"
+					},
+					"length": {
+						"type": ["string", "null"],
+						"description": "define max length of value"
+					},
+					"null": {
+						"type": "boolean",
+						"description": "define if column is nullable"
+					},
+					"input_type": {
+						"type": "string",
+						"enum": ["int", "datetime", "string", "option", "externalEntity", "deepExternalEntity", "multipleExternalEntity" , "number", "code" , "time", "date", "boolean", "text", "currency", "file", "password" , "richText" , "markdown" , "float" ,"phone" , "address", "email", "color"],
+						"description": "define the frontend fileds/input"
+					},
+					"default": {
+						"type": ["string" , "integer" , "boolean"],
+						"examples":["CURRENT_TIMESTAMP" , "CURRENT_TIME" , "CURRENT_DATE" , "123" , "text"],
+						"description": "default value, it accept also mysql function"
+					},
+					"options": {
+						"type": "object",
+						"description": "define custom properties and authorization for the column",
+						"properties": {
+							"visible": {"type": "boolean"},
+							"editable": {"type": "boolean"},
+							"default": {"type": ["string", "integer"]},
+							"tooltip": {"type": "string"},
+							"entity": {"type": "string"},
+							"labelField": {"type": "string"},
+							"link_entity": {"type": "string"},
+							"source_field": {"type": "string"},
+							"destination_field": {"type": "string"},
+							"language":{"type":["string"],"enum": ["html","json" ,"js","sql"],"description":"define the code language. rif: react-textarea-code-editor","$comment": "library used: react-textarea-code-editor"},
+							"options": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"name": {"type": "string"},
+										"value": {"type": ["string", "integer"]},
+										"bg": {"type": "string", "enum": ["primary", "secondary", "warning", "success", "danger", "info", "light", "dark", "muted", "white"]}
+									},
+									"additionalProperties": false
+								}
+							},
+							"filters": {
+								"type":"array",
+								"items": {
+									"type":"object",
+									"properties": {
+										"operation": {"type":"string","description": "operation for filter", "default":"equalToValue","enum": ["equalToValue" , "customFilter" , "equalToParentField"]}
+									},
+									"if" : {
+										"properties": {
+											"operation":{
+												"const": "customFilter"
+											}
+										}
+									},
+									"then": {
+										"required": ["reference"],
+										"minProperties": 2,
+										"properties": {
+											"operation": {"type":"string","description": "operation for filter", "default":"equalToValue","enum": ["customFilter"]},
+											"reference": {"type":["string" , "integer"],"description": "query search value"}
+										}
+									},
+									"else": {
+										"required": ["field" , "operation" , "value"],
+										"minProperties": 3,
+										"properties": {
+											"field": {"type":"string","description": "name of column user as filter value"},
+											"operation": {"type":"string","description": "operation for filter", "default":"equalToValue","enum": ["equalToValue" , "equalToParentField"]},
+											"value": {"type":["string" , "integer"],"description": "query search value"}
+										}
+									}
+								}
+							},
+							"autocompile": {
+								"type":"object",
+								"description": "need a input_type address",
+								"required": ["latitude" , "longitude" , "route" , "locality" , "country" , "postalCode" , "streetNumber"],
+								"default": ["latitude" , "longitude" , "route" , "locality" , "country" , "postalCode" , "streetNumber"],
+								"properties": {
+									"latitude": {"type":["string","null"] , "description": "column to complete automatically"},
+									"longitude": {"type":["string" , "null"] , "description": "column to complete automatically"},
+									"route": {"type":["string" , "null"] , "description": "column to complete automatically"},
+									"locality": {"type":["string" , "null"] , "description": "column to complete automatically"},
+									"country": {"type":["string" , "null"] , "description": "column to complete automatically"},
+									"postalCode": {"type":["string" , "null"] , "description": "column to complete automatically"},
+									"streetNumber": {"type":["string" , "null"] , "description": "column to complete automatically"}
+								},
+								"additionalProperties": false
+							}
+						}
+					},
+					"validation": {
+						"type": "object",
+						"description": "define if user input needs to be validate",
+						"properties": {
+							"required": {
+								"type": "boolean"
+							},
+							"type": {
+								"type": "string",
+								"enum": ["image"]
+							}
+						},
+						"required": ["required"]
+					}
+				},
+
+				"$comment": "if option is selected, require options>options",
+				"if": {
+					"properties": {
+						"input_type": {"const": "option"}
+					}
+				},
+				"then": {
+					"required": ["type", "length", "null", "input_type", "validation", "options"],
+					"properties": {
+						"options": {
+							"required": ["visible", "editable", "options"]
+						}
+					}
+				},
+				"else": {
+
+					"$comment": "if externalEntity is selected, require entity and labelField",
+					"if": {
+						"properties": {
+							"input_type": {"const": "externalEntity"}
+						}
+					},
+					"then": {
+						"properties": {
+							"options": {
+								"required": ["visible", "editable", "entity", "labelField"]
+							}
+						}
+					},
+					"else": {
+
+						"$comment": "if deepExternalEntity is selected, require entity labelField and source_field",
+						"if": {
+							"properties": {
+								"input_type": {"const": "deepExternalEntity"}
+							}
+						},
+						"then": {
+							"properties": {
+								"options": {
+									"required": ["visible", "editable", "entity", "labelField", "source_field"]
+								}
+							}
+						},
+						"else": {
+
+							"$comment": "if multipleExternalEntity is selected, require: entity, labelField, link_entity, source_field, destination_field",
+							"if" :{
+								"properties": {
+									"input_type": {"const": "multipleExternalEntity"}
+								}
+							},
+							"then" :{
+								"properties": {
+									"options": {
+										"required": ["visible", "editable", "entity", "labelField", "link_entity" , "source_field", "destination_field"]
+									}
+								}
+							},
+							"else": {
+
+								"$comment": "if code is selected, require language",
+								"if": {
+									"properties": {
+										"input_type": {"const": "code"}
+									}
+								},
+								"then": {
+									"properties": {
+										"options": {
+											"required": ["visible", "editable", "language"]
+										}
+									}
+								},
+								"else": {
+									"$comment": "if input_type date require TIMESTAMP or date",
+									"if": {
+										"properties": {
+											"input_type": {"const": "date"}
+										}
+									},
+									"then": {
+										"properties": {
+											"type" : {
+												"enum": ["TIMESTAMP" , "DATE"],
+												"default" : "DATE"
+											},
+											"$comment": {"length" : {"enum": ["null"]}}
+										}
+									},
+									"else": {
+										"$comment": "if input_type time require time",
+										"if": {
+											"properties": {
+												"input_type": {"const": "time"}
+											}
+										},
+										"then": {
+											"properties": {
+												"type" : {
+													"enum": ["TIME"],
+													"default" : "TIME"
+												},
+												"$comment": {"length" : {"enum": ["null"]}}
+											}
+										},
+										"else": {
+											"$comment": "if input_type time require TIMESTAMP or date",
+											"if": {
+												"properties": {
+													"input_type": {"const": "datetime"}
+												}
+											},
+											"then": {
+												"properties": {
+													"type" : {
+														"enum": ["DATETIME" , "TIMESTAMP"],
+														"default" : "TIMESTAMP"
+													},
+													"$comment": {"length" : {"enum": ["null"]}}
+												}
+											},
+											"else": {
+												"else": {
+													"$comment": "if float require VARCHAR",
+													"if": {
+														"properties": {
+															"input_type": {"const": "float"}
+														}
+													},
+													"then": {
+														"properties": {
+															"type" : {
+																"enum": ["VARCHAR"]
+															}
+														}
+													},
+													"else": {
+														
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"propertyNames": {
+				"not": {
+					"enum": ["accessible", "add", "all", "alter", "analyze", "and", "as", "asc", "asensitive", "before", "between", "bigint", "binary", "blob", "both", "by", "call", "cascade", "case", "change", "char", "character", "check", "collate", "column", "condition", "constraint", "continue", "convert", "create", "cross", "current_date", "current_time", "current_timestamp", "current_user", "cursor", "database", "databases", "day_hour", "day_microsecond", "day_minute", "day_second", "dec", "decimal", "declare", "default", "delayed", "delete", "desc", "describe", "deterministic", "distinct", "distinctrow", "div", "double", "drop", "dual", "each", "else", "elseif", "enclosed", "escaped", "exists", "exit", "explain", "false", "fetch", "float", "float4", "float8", "for", "force", "foreign", "from", "fulltext", "generated", "get", "grant", "group", "having", "high_priority", "hour_microsecond", "hour_minute", "hour_second", "if", "ignore", "in", "index", "infile", "inner", "inout", "insensitive", "insert", "int", "int1", "int2", "int3", "int4", "int8", "integer", "interval", "into", "is", "iterate", "join", "key", "keys", "kill", "leading", "leave", "left", "like", "limit", "linear", "lines", "load", "localtime", "localtimestamp", "lock", "long", "longblob", "longtext", "loop", "low_priority", "master_ssl_verify_server_cert", "match", "maxvalue", "mediumblob", "mediumint", "mediumtext", "middleint", "minute_microsecond", "minute_second", "mod", "modifies", "natural", "not", "no_write_to_binlog", "null", "numeric", "on", "optimize", "option", "or", "order", "out", "outer", "outfile", "partition", "precision", "primary", "procedure", "purge", "range", "read", "reads", "read_write", "real", "references", "regexp", "release", "rename", "repeat", "replace", "require", "resignal", "restrict", "return", "revoke", "right", "rlike", "schema", "schemas", "second_microsecond", "select", "sensitive", "separator", "set", "show", "signal", "smallint", "spatial", "specific", "sql", "sqlexception", "sqlstate", "sqlwarning", "sql_big_result", "sql_calc_found_rows", "sql_small_result", "ssl", "starting", "stored", "straight_join", "table", "terminated", "then", "tinyblob", "tinyint", "tinytext", "to", "trailing", "trigger", "true", "undo", "union", "unique", "unlock", "unsigned", "update", "usage", "use", "using", "utc_date", "utc_time", "utc_timestamp", "values", "varbinary", "varchar", "varcharacter", "varying", "virtual", "when", "where", "while", "with", "write", "xor", "year_month", "zerofill"]
+				}
+			}
+		},
+		"callback_entity": {
+				"type": "string",
+				"$comment": "da fare controllo"
+			},
+		"reference_entity": {
+			"type": "string",
+			"$comment": "da fare controllo"
+		},
+		"authorization": {
+			"description": "management user authorization",
+			"type": "object",
+			"properties": {
+				"groupField": {
+					"description": "Field representing the group ID",
+					"type": "string",
+					"examples": ["idUserGroup"]
+				},
+				"userField": {
+					"description": "Field representing the user ID",
+					"type": "string",
+					"examples": ["id"]
+				}
+			}
+		},
+		"permissions": {
+			"type": "object",
+			"description": "define authorization for table. Connect permissions key to user_group",
+			"additionalProperties": {
+				"type":"object",
+				"required": ["view" , "create" , "edit" , "delete"],
+				"properties": {
+					"view":{"type":["boolean","string"],"enum":[true,false,"user","group"]},
+					"create":{"type":["boolean","string"],"enum":[true,false,"user","group"]},
+					"edit":{"type":["boolean","string"],"enum":[true,false,"user","group"]},
+					"delete":{"type":["boolean","string"],"enum":[true,false,"user","group"]}
+				}
+			},
+			"$comment": "check if permissions has a corrisponding group and if not print a warning and not error"
+		}
+	},
+	"propertyNames": {
+		"not": {
+			"enum": ["accessible", "add", "all", "alter", "analyze", "and", "as", "asc", "asensitive", "before", "between", "bigint", "binary", "blob", "both", "by", "call", "cascade", "case", "change", "char", "character", "check", "collate", "column", "condition", "constraint", "continue", "convert", "create", "cross", "current_date", "current_time", "current_timestamp", "current_user", "cursor", "database", "databases", "day_hour", "day_microsecond", "day_minute", "day_second", "dec", "decimal", "declare", "default", "delayed", "delete", "desc", "describe", "deterministic", "distinct", "distinctrow", "div", "double", "drop", "dual", "each", "else", "elseif", "enclosed", "escaped", "exists", "exit", "explain", "false", "fetch", "float", "float4", "float8", "for", "force", "foreign", "from", "fulltext", "generated", "get", "grant", "group", "having", "high_priority", "hour_microsecond", "hour_minute", "hour_second", "if", "ignore", "in", "index", "infile", "inner", "inout", "insensitive", "insert", "int", "int1", "int2", "int3", "int4", "int8", "integer", "interval", "into", "is", "iterate", "join", "key", "keys", "kill", "leading", "leave", "left", "like", "limit", "linear", "lines", "load", "localtime", "localtimestamp", "lock", "long", "longblob", "longtext", "loop", "low_priority", "master_ssl_verify_server_cert", "match", "maxvalue", "mediumblob", "mediumint", "mediumtext", "middleint", "minute_microsecond", "minute_second", "mod", "modifies", "natural", "not", "no_write_to_binlog", "null", "numeric", "on", "optimize", "option", "or", "order", "out", "outer", "outfile", "partition", "precision", "primary", "procedure", "purge", "range", "read", "reads", "read_write", "real", "references", "regexp", "release", "rename", "repeat", "replace", "require", "resignal", "restrict", "return", "revoke", "right", "rlike", "schema", "schemas", "second_microsecond", "select", "sensitive", "separator", "set", "show", "signal", "smallint", "spatial", "specific", "sql", "sqlexception", "sqlstate", "sqlwarning", "sql_big_result", "sql_calc_found_rows", "sql_small_result", "ssl", "starting", "stored", "straight_join", "table", "terminated", "then", "tinyblob", "tinyint", "tinytext", "to", "trailing", "trigger", "true", "undo", "union", "unique", "unlock", "unsigned", "update", "usage", "use", "using", "utc_date", "utc_time", "utc_timestamp", "values", "varbinary", "varchar", "varcharacter", "varying", "virtual", "when", "where", "while", "with", "write", "xor", "year_month", "zerofill"]
+		}
+	}
+}

@@ -1,0 +1,13 @@
+# Le classi del framework vengono solo require-ate dagli entry point in api/.
+# Nessuna di esse va raggiunta via HTTP.
+
+# Apache 2.4
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+
+# Apache 2.2 (o 2.4 senza mod_authz_core)
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+</IfModule>

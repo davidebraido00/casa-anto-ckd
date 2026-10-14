@@ -1,0 +1,4 @@
+.DS_Store
+# file caricati e log generati a runtime (contengono dati dei clienti)
+upload/
+custom/logs/

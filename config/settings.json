@@ -1,0 +1,88 @@
+{
+    "db": {
+        "server": "127.0.0.1",
+        "name": "casa_anto",
+        "username": "casaanto",
+        "password": "casaanto_dev",
+        "timezone": "Europe/Rome"
+    },
+    "mail": {
+        "smtp_server": "",
+        "smtp_enable_auth": true,
+        "smtp_username": "",
+        "smtp_password": "",
+        "smtp_secure_type": "ssl",
+        "smtp_port": 465,
+        "from_name": "Casa Anto",
+        "dev_log": true
+    },
+    "host": {
+        "domain": "localhost:8080"
+    },
+    "not_loged": {
+        "calls_allowed": false,
+        "username": "not-logged",
+        "name": "user",
+        "surname": "user",
+        "idUserGroup": "0",
+        "level": 999,
+        "id": "0"
+    },
+    "login_social": {
+        "google_client_id": "",
+        "fb_app_id": "",
+        "fb_secret": ""
+    },
+    "file": {
+        "allowed_types": "pdf, jpg, jpeg, png, webp",
+        "max_size": 10485760
+    },
+    "api_keys": {
+        "google_maps_api_key": "null",
+        "anthropic_api_key": ""
+    },
+    "ai_assistant": {
+        "levels": [
+            0
+        ],
+        "admin_levels": [
+            0
+        ],
+        "model": "claude-sonnet-4-6",
+        "max_rows": 200,
+        "export_max_rows": 5000,
+        "max_execution_ms": 8000,
+        "max_file_bytes": 4194304,
+        "db_readonly": {
+            "username": "",
+            "password": ""
+        },
+        "hidden_tables": [],
+        "hidden_columns": {},
+        "prompt_notes": [],
+        "monthly_budget": 0
+    },
+    "storage": {
+        "provider": "local",
+        "supabase": {
+            "url": "https://<ref>.supabase.co",
+            "bucket": "",
+            "service_key": "",
+            "public": true
+        }
+    },
+    "shop": {
+        "site_url": "http://localhost:3001",
+        "currency": "eur",
+        "order_prefix": "CA"
+    },
+    "stripe": {
+        "secret_key": "",
+        "webhook_secret": ""
+    },
+    "paypal": {
+        "mode": "sandbox",
+        "client_id": "",
+        "client_secret": ""
+    }
+}

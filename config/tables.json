@@ -1,0 +1,4233 @@
+{
+    "user": {
+        "primary_key": "id",
+        "default_key": "username",
+        "authorization": {
+            "groupField": "idUserGroup",
+            "userField": "id"
+        },
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "name": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "surname": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "username": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "unique": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "email": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": false,
+                "unique": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": true
+                }
+            },
+            "password": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "password",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": true,
+                    "private": true
+                },
+                "validation": {
+                    "required": true
+                }
+            },
+            "level": {
+                "type": "INT",
+                "length": "3",
+                "input_type": "option",
+                "null": false,
+                "default": "2",
+                "options": {
+                    "visible": false,
+                    "editable": true,
+                    "options": [
+                        {
+                            "name": "admin",
+                            "value": 0,
+                            "bg": "primary"
+                        },
+                        {
+                            "name": "user",
+                            "value": 1,
+                            "bg": "secondary"
+                        }
+                    ],
+                    "default": 2
+                },
+                "validation": {
+                    "required": true
+                }
+            },
+            "idUserGroup": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "externalEntity",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false,
+                    "entity": "user_group",
+                    "labelField": "name"
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "avatar": {
+                "type": "INT",
+                "length": "3",
+                "input_type": "option",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true,
+                    "options": [
+                        {
+                            "value": 0,
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": 1,
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": 2,
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": 3,
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": 4,
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": 5,
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": 6,
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": 7,
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": 8,
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": 9,
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": 10,
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": 11,
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": 12,
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": 13,
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": 14,
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": 15,
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": 16,
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": 17,
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": 18,
+                            "bg": "secondary"
+                        }
+                    ]
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "disabled": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "default": 0,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            }
+        },
+        "permissions": {
+            "0": {
+                "view": true,
+                "create": true,
+                "edit": true,
+                "delete": true
+            },
+            "1": {
+                "view": "group",
+                "create": true,
+                "edit": "group",
+                "delete": "group"
+            },
+            "2": {
+                "view": "group",
+                "create": false,
+                "edit": false,
+                "delete": false
+            }
+        }
+    },
+    "user_group": {
+        "primary_key": "id",
+        "default_key": "name",
+        "authorization": {
+            "groupField": "id"
+        },
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "name": {
+                "type": "VARCHAR",
+                "length": "200",
+                "input_type": "string",
+                "null": false,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": true
+                }
+            }
+        },
+        "permissions": {
+            "0": {
+                "view": true,
+                "create": true,
+                "edit": true,
+                "delete": true
+            },
+            "1": {
+                "view": "group",
+                "create": false,
+                "edit": false,
+                "delete": false
+            },
+            "2": {
+                "view": "group",
+                "create": false,
+                "edit": false,
+                "delete": false
+            }
+        }
+    },
+    "auth_token": {
+        "primary_key": "id",
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "idUser": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "sid": {
+                "type": "VARCHAR",
+                "length": "60",
+                "input_type": "string",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "ltsid": {
+                "type": "VARCHAR",
+                "length": "60",
+                "input_type": "string",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            }
+        },
+        "permissions": {}
+    },
+    "auth_pin": {
+        "primary_key": "id",
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "date",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "date",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "idUser": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "pin": {
+                "type": "VARCHAR",
+                "length": "10",
+                "input_type": "string",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            }
+        },
+        "permissions": {}
+    },
+    "resource": {
+        "primary_key": "id",
+        "default_key": "filename",
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "idUser": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "entity": {
+                "type": "VARCHAR",
+                "length": "60",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "filename": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "hash": {
+                "type": "VARCHAR",
+                "length": "32",
+                "input_type": "string",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "extension": {
+                "type": "VARCHAR",
+                "length": "10",
+                "input_type": "string",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            }
+        },
+        "permissions": {
+            "0": {
+                "view": true,
+                "create": true,
+                "edit": true,
+                "delete": true
+            }
+        }
+    },
+    "user_entity_saved_filters": {
+        "primary_key": "id",
+        "default_key": "id",
+        "authorization": {
+            "userField": "author"
+        },
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "author": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "externalEntity",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false,
+                    "entity": "user",
+                    "labelField": "username"
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "entity": {
+                "type": "VARCHAR",
+                "length": "500",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "name": {
+                "type": "VARCHAR",
+                "length": "500",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "notes": {
+                "type": "TEXT",
+                "length": null,
+                "input_type": "text",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "content": {
+                "type": "TEXT",
+                "length": null,
+                "input_type": "code",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true,
+                    "language": "json"
+                },
+                "validation": {
+                    "required": false
+                }
+            }
+        },
+        "permissions": {
+            "0": {
+                "view": "user",
+                "create": true,
+                "edit": "user",
+                "delete": "user"
+            },
+            "1": {
+                "view": "user",
+                "create": true,
+                "edit": "user",
+                "delete": "user"
+            },
+            "2": {
+                "view": "user",
+                "create": true,
+                "edit": "user",
+                "delete": "user"
+            }
+        }
+    },
+    "user_entity_preferences": {
+        "primary_key": "id",
+        "default_key": "id",
+        "authorization": {
+            "userField": "author"
+        },
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "author": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "externalEntity",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false,
+                    "entity": "user",
+                    "labelField": "username"
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "entity": {
+                "type": "VARCHAR",
+                "length": "500",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "label": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "isDefault": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": true,
+                "default": 1,
+                "options": {
+                    "visible": true,
+                    "editable": true,
+                    "default": 1
+                },
+                "validation": {
+                    "required": true
+                }
+            },
+            "content": {
+                "type": "TEXT",
+                "length": null,
+                "input_type": "code",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true,
+                    "language": "json"
+                },
+                "validation": {
+                    "required": false
+                }
+            }
+        },
+        "permissions": {
+            "0": {
+                "view": "user",
+                "create": true,
+                "edit": "user",
+                "delete": "user"
+            },
+            "1": {
+                "view": "user",
+                "create": true,
+                "edit": "user",
+                "delete": "user"
+            },
+            "2": {
+                "view": "user",
+                "create": true,
+                "edit": "user",
+                "delete": "user"
+            }
+        }
+    },
+    "log": {
+        "primary_key": "id",
+        "default_key": "id",
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "date",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": true,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "date",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "idUser": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "externalEntity",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": false,
+                    "entity": "user",
+                    "labelField": "username"
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "entity": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": false
+                }
+            },
+            "idItem": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "operation": {
+                "type": "VARCHAR",
+                "length": "30",
+                "input_type": "option",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": false,
+                    "options": [
+                        {
+                            "value": "0_DELETE",
+                            "bg": "danger"
+                        },
+                        {
+                            "value": "1_EDIT",
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": "2_ADD",
+                            "bg": "success"
+                        },
+                        {
+                            "value": "3_LOGIN",
+                            "bg": "info"
+                        },
+                        {
+                            "value": "4_LOGOUT",
+                            "bg": "info"
+                        }
+                    ]
+                },
+                "validation": {
+                    "required": true
+                }
+            },
+            "notes": {
+                "type": "TEXT",
+                "length": "null",
+                "input_type": "text",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            }
+        },
+        "permissions": {
+            "0": {
+                "view": true,
+                "create": false,
+                "edit": false,
+                "delete": false
+            }
+        }
+    },
+    "product": {
+        "primary_key": "id",
+        "default_key": "name_it",
+        "description": "Oli in vendita. Testi in italiano (_it) e inglese (_en). Il prezzo e la giacenza sono sulle varianti (product_variant).",
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "default": 0,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "name_it": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": true
+                }
+            },
+            "name_en": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "slug": {
+                "type": "VARCHAR",
+                "length": "120",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": true
+                },
+                "unique": true
+            },
+            "subtitle_it": {
+                "type": "VARCHAR",
+                "length": "255",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "subtitle_en": {
+                "type": "VARCHAR",
+                "length": "255",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "description_it": {
+                "type": "TEXT",
+                "length": null,
+                "input_type": "markdown",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true,
+                    "rows": 10
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "description_en": {
+                "type": "TEXT",
+                "length": null,
+                "input_type": "markdown",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true,
+                    "rows": 10
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "tastingNotes_it": {
+                "type": "TEXT",
+                "length": null,
+                "input_type": "text",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "tastingNotes_en": {
+                "type": "TEXT",
+                "length": null,
+                "input_type": "text",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "pairings_it": {
+                "type": "TEXT",
+                "length": null,
+                "input_type": "text",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "pairings_en": {
+                "type": "TEXT",
+                "length": null,
+                "input_type": "text",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "cultivar": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "acidity": {
+                "type": "VARCHAR",
+                "length": "50",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "harvest": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "harvest_en": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "intensity": {
+                "type": "VARCHAR",
+                "length": "30",
+                "input_type": "option",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true,
+                    "options": [
+                        {
+                            "value": "delicato",
+                            "bg": "success"
+                        },
+                        {
+                            "value": "medio",
+                            "bg": "warning"
+                        },
+                        {
+                            "value": "intenso",
+                            "bg": "danger"
+                        }
+                    ],
+                    "default": "medio"
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": "medio"
+            },
+            "image": {
+                "type": "VARCHAR",
+                "length": "500",
+                "input_type": "file",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "image2": {
+                "type": "VARCHAR",
+                "length": "500",
+                "input_type": "file",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "image3": {
+                "type": "VARCHAR",
+                "length": "500",
+                "input_type": "file",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "image4": {
+                "type": "VARCHAR",
+                "length": "500",
+                "input_type": "file",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "featured": {
+                "type": "INT",
+                "length": "1",
+                "input_type": "boolean",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": 0
+            },
+            "active": {
+                "type": "INT",
+                "length": "1",
+                "input_type": "boolean",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": 1
+            },
+            "sortOrder": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": 0
+            },
+            "variants": {
+                "type": "NONE",
+                "length": "0",
+                "input_type": "deepExternalEntity",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true,
+                    "entity": "product_variant",
+                    "labelField": "format",
+                    "source_field": "idProduct",
+                    "visibleColumns": [
+                        "format",
+                        "sku",
+                        "price",
+                        "lowStockThreshold",
+                        "active"
+                    ]
+                }
+            }
+        },
+        "permissions": {
+            "0": {
+                "view": true,
+                "create": true,
+                "edit": true,
+                "delete": true
+            }
+        }
+    },
+    "product_variant": {
+        "primary_key": "id",
+        "default_key": "fullName",
+        "description": "Formato vendibile di un prodotto (es. Classico 500 ml) con prezzo IVA inclusa. La giacenza non è un campo: è la somma di stock_movement.quantity.",
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "default": 0,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "idProduct": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "format": {
+                "type": "VARCHAR",
+                "length": "50",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": true
+                }
+            },
+            "sku": {
+                "type": "VARCHAR",
+                "length": "60",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                },
+                "unique": true
+            },
+            "price": {
+                "type": "DECIMAL",
+                "length": "10,2",
+                "input_type": "currency",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": true,
+                    "min": 0
+                }
+            },
+            "compareAtPrice": {
+                "type": "DECIMAL",
+                "length": "10,2",
+                "input_type": "currency",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false,
+                    "min": 0
+                }
+            },
+            "weightGrams": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "lowStockThreshold": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": 10
+            },
+            "active": {
+                "type": "INT",
+                "length": "1",
+                "input_type": "boolean",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": 1
+            },
+            "sortOrder": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": 0
+            },
+            "fullName": {
+                "type": "VARCHAR",
+                "length": "200",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                }
+            }
+        },
+        "permissions": {
+            "0": {
+                "view": true,
+                "create": true,
+                "edit": true,
+                "delete": true
+            }
+        }
+    },
+    "stock_movement": {
+        "primary_key": "id",
+        "default_key": "id",
+        "description": "Movimenti di magazzino. quantity è con segno: positivo = entrata, negativo = uscita. Giacenza variante = SUM(quantity).",
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "default": 0,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "idVariant": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "externalEntity",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true,
+                    "entity": "product_variant",
+                    "labelField": "fullName",
+                    "visibleColumns": [
+                        "fullName",
+                        "sku"
+                    ]
+                },
+                "validation": {
+                    "required": true
+                }
+            },
+            "type": {
+                "type": "VARCHAR",
+                "length": "30",
+                "input_type": "option",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true,
+                    "options": [
+                        {
+                            "value": "carico",
+                            "bg": "success"
+                        },
+                        {
+                            "value": "scarico",
+                            "bg": "danger"
+                        },
+                        {
+                            "value": "rettifica",
+                            "bg": "warning"
+                        },
+                        {
+                            "value": "vendita_online",
+                            "bg": "primary"
+                        },
+                        {
+                            "value": "vendita_diretta",
+                            "bg": "info"
+                        },
+                        {
+                            "value": "reso",
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": "annullo",
+                            "bg": "secondary"
+                        }
+                    ],
+                    "default": "carico"
+                },
+                "validation": {
+                    "required": true
+                },
+                "default": "carico"
+            },
+            "quantity": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": true
+                }
+            },
+            "idOrder": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "externalEntity",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": false,
+                    "entity": "shop_order",
+                    "labelField": "number"
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "notes": {
+                "type": "TEXT",
+                "length": null,
+                "input_type": "text",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            }
+        },
+        "permissions": {
+            "0": {
+                "view": true,
+                "create": true,
+                "edit": true,
+                "delete": true
+            }
+        }
+    },
+    "customer": {
+        "primary_key": "id",
+        "default_key": "email",
+        "description": "Clienti registrati sul sito. Gli ordini da ospite hanno idCustomer vuoto e si riconoscono dall'email.",
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "default": 0,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "firstName": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "lastName": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "email": {
+                "type": "VARCHAR",
+                "length": "150",
+                "input_type": "email",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": true
+                },
+                "unique": true
+            },
+            "phone": {
+                "type": "VARCHAR",
+                "length": "40",
+                "input_type": "phone",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "passwordHash": {
+                "type": "VARCHAR",
+                "length": "255",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false,
+                    "private": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "language": {
+                "type": "VARCHAR",
+                "length": "5",
+                "input_type": "option",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true,
+                    "options": [
+                        {
+                            "value": "it",
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": "en",
+                            "bg": "secondary"
+                        }
+                    ],
+                    "default": "it"
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": "it"
+            },
+            "marketingConsent": {
+                "type": "INT",
+                "length": "1",
+                "input_type": "boolean",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": 0
+            },
+            "disabled": {
+                "type": "INT",
+                "length": "1",
+                "input_type": "boolean",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": 0
+            },
+            "lastLoginAt": {
+                "type": "DATETIME",
+                "length": null,
+                "input_type": "datetime",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "notes": {
+                "type": "TEXT",
+                "length": null,
+                "input_type": "text",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "addresses": {
+                "type": "NONE",
+                "length": "0",
+                "input_type": "deepExternalEntity",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true,
+                    "entity": "customer_address",
+                    "labelField": "address",
+                    "source_field": "idCustomer",
+                    "visibleColumns": [
+                        "label",
+                        "address",
+                        "city",
+                        "zip",
+                        "country",
+                        "isDefault"
+                    ]
+                }
+            }
+        },
+        "permissions": {
+            "0": {
+                "view": true,
+                "create": true,
+                "edit": true,
+                "delete": true
+            }
+        }
+    },
+    "customer_address": {
+        "primary_key": "id",
+        "default_key": "address",
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "default": 0,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "idCustomer": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "label": {
+                "type": "VARCHAR",
+                "length": "60",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "firstName": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "lastName": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "company": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "address": {
+                "type": "VARCHAR",
+                "length": "255",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": true
+                }
+            },
+            "city": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": true
+                }
+            },
+            "zip": {
+                "type": "VARCHAR",
+                "length": "20",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": true
+                }
+            },
+            "province": {
+                "type": "VARCHAR",
+                "length": "60",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "country": {
+                "type": "VARCHAR",
+                "length": "2",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": true
+                },
+                "default": "IT"
+            },
+            "phone": {
+                "type": "VARCHAR",
+                "length": "40",
+                "input_type": "phone",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "isDefault": {
+                "type": "INT",
+                "length": "1",
+                "input_type": "boolean",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": 0
+            }
+        },
+        "permissions": {
+            "0": {
+                "view": true,
+                "create": true,
+                "edit": true,
+                "delete": true
+            }
+        }
+    },
+    "customer_token": {
+        "primary_key": "id",
+        "default_key": "token",
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "default": 0,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "idCustomer": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "token": {
+                "type": "VARCHAR",
+                "length": "128",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                },
+                "unique": true
+            },
+            "type": {
+                "type": "VARCHAR",
+                "length": "20",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "expiresAt": {
+                "type": "DATETIME",
+                "length": null,
+                "input_type": "datetime",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            }
+        },
+        "permissions": {}
+    },
+    "shop_order": {
+        "primary_key": "id",
+        "default_key": "number",
+        "description": "Ordini. channel=online (sito) o diretta (vendita in azienda). Incassato = status in (pagato, in_preparazione, spedito, consegnato), data di riferimento paidAt. Importi IVA inclusa.",
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "default": 0,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "number": {
+                "type": "VARCHAR",
+                "length": "30",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                },
+                "unique": true
+            },
+            "channel": {
+                "type": "VARCHAR",
+                "length": "30",
+                "input_type": "option",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true,
+                    "options": [
+                        {
+                            "value": "online",
+                            "bg": "primary"
+                        },
+                        {
+                            "value": "diretta",
+                            "bg": "info"
+                        }
+                    ],
+                    "default": "online"
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": "online"
+            },
+            "status": {
+                "type": "VARCHAR",
+                "length": "30",
+                "input_type": "option",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true,
+                    "options": [
+                        {
+                            "value": "in_attesa_pagamento",
+                            "bg": "warning"
+                        },
+                        {
+                            "value": "pagato",
+                            "bg": "info"
+                        },
+                        {
+                            "value": "in_preparazione",
+                            "bg": "primary"
+                        },
+                        {
+                            "value": "spedito",
+                            "bg": "primary"
+                        },
+                        {
+                            "value": "consegnato",
+                            "bg": "success"
+                        },
+                        {
+                            "value": "annullato",
+                            "bg": "danger"
+                        },
+                        {
+                            "value": "rimborsato",
+                            "bg": "secondary"
+                        }
+                    ],
+                    "default": "in_attesa_pagamento"
+                },
+                "validation": {
+                    "required": true
+                },
+                "default": "in_attesa_pagamento"
+            },
+            "paymentMethod": {
+                "type": "VARCHAR",
+                "length": "30",
+                "input_type": "option",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true,
+                    "options": [
+                        {
+                            "value": "stripe",
+                            "bg": "primary"
+                        },
+                        {
+                            "value": "paypal",
+                            "bg": "info"
+                        },
+                        {
+                            "value": "contanti",
+                            "bg": "success"
+                        },
+                        {
+                            "value": "pos",
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": "bonifico",
+                            "bg": "secondary"
+                        }
+                    ]
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "paymentRef": {
+                "type": "VARCHAR",
+                "length": "255",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "paidAt": {
+                "type": "DATETIME",
+                "length": null,
+                "input_type": "datetime",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "paymentFee": {
+                "type": "DECIMAL",
+                "length": "10,2",
+                "input_type": "currency",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "idCustomer": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "externalEntity",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true,
+                    "entity": "customer",
+                    "labelField": "email",
+                    "visibleColumns": [
+                        "firstName",
+                        "lastName",
+                        "email"
+                    ]
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "email": {
+                "type": "VARCHAR",
+                "length": "150",
+                "input_type": "email",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "firstName": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "lastName": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "phone": {
+                "type": "VARCHAR",
+                "length": "40",
+                "input_type": "phone",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "shipAddress": {
+                "type": "VARCHAR",
+                "length": "255",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "shipCity": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "shipZip": {
+                "type": "VARCHAR",
+                "length": "20",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "shipProvince": {
+                "type": "VARCHAR",
+                "length": "60",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "shipCountry": {
+                "type": "VARCHAR",
+                "length": "2",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "shippingZone": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "subtotal": {
+                "type": "DECIMAL",
+                "length": "10,2",
+                "input_type": "currency",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "discountCode": {
+                "type": "VARCHAR",
+                "length": "50",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "discountAmount": {
+                "type": "DECIMAL",
+                "length": "10,2",
+                "input_type": "currency",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "shippingCost": {
+                "type": "DECIMAL",
+                "length": "10,2",
+                "input_type": "currency",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "total": {
+                "type": "DECIMAL",
+                "length": "10,2",
+                "input_type": "currency",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "language": {
+                "type": "VARCHAR",
+                "length": "5",
+                "input_type": "option",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true,
+                    "options": [
+                        {
+                            "value": "it",
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": "en",
+                            "bg": "secondary"
+                        }
+                    ],
+                    "default": "it"
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": "it"
+            },
+            "customerNotes": {
+                "type": "TEXT",
+                "length": null,
+                "input_type": "text",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "internalNotes": {
+                "type": "TEXT",
+                "length": null,
+                "input_type": "text",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "trackingCarrier": {
+                "type": "VARCHAR",
+                "length": "60",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "trackingNumber": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "trackingUrl": {
+                "type": "VARCHAR",
+                "length": "500",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "shippedAt": {
+                "type": "DATETIME",
+                "length": null,
+                "input_type": "datetime",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "stockApplied": {
+                "type": "INT",
+                "length": "1",
+                "input_type": "boolean",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": 0
+            },
+            "checkoutRef": {
+                "type": "VARCHAR",
+                "length": "255",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "accessToken": {
+                "type": "VARCHAR",
+                "length": "64",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false,
+                    "private": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "items": {
+                "type": "NONE",
+                "length": "0",
+                "input_type": "deepExternalEntity",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false,
+                    "entity": "shop_order_item",
+                    "labelField": "productName",
+                    "source_field": "idOrder",
+                    "visibleColumns": [
+                        "productName",
+                        "format",
+                        "unitPrice",
+                        "quantity",
+                        "lineTotal"
+                    ]
+                }
+            }
+        },
+        "permissions": {
+            "0": {
+                "view": true,
+                "create": true,
+                "edit": true,
+                "delete": true
+            }
+        }
+    },
+    "shop_order_item": {
+        "primary_key": "id",
+        "default_key": "productName",
+        "description": "Righe d'ordine, con nome e prezzo copiati al momento dell'acquisto.",
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "default": 0,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "idOrder": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "idVariant": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "externalEntity",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true,
+                    "entity": "product_variant",
+                    "labelField": "fullName"
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "productName": {
+                "type": "VARCHAR",
+                "length": "200",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "format": {
+                "type": "VARCHAR",
+                "length": "50",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "sku": {
+                "type": "VARCHAR",
+                "length": "60",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "unitPrice": {
+                "type": "DECIMAL",
+                "length": "10,2",
+                "input_type": "currency",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "quantity": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "lineTotal": {
+                "type": "DECIMAL",
+                "length": "10,2",
+                "input_type": "currency",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            }
+        },
+        "permissions": {
+            "0": {
+                "view": true,
+                "create": true,
+                "edit": true,
+                "delete": true
+            }
+        }
+    },
+    "discount_code": {
+        "primary_key": "id",
+        "default_key": "code",
+        "description": "Codici sconto. percentuale: value = % sul subtotale; importo: value = euro; spedizione_gratuita: azzera la spedizione.",
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "default": 0,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "code": {
+                "type": "VARCHAR",
+                "length": "50",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": true
+                },
+                "unique": true
+            },
+            "description": {
+                "type": "VARCHAR",
+                "length": "255",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "type": {
+                "type": "VARCHAR",
+                "length": "30",
+                "input_type": "option",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true,
+                    "options": [
+                        {
+                            "value": "percentuale",
+                            "bg": "primary"
+                        },
+                        {
+                            "value": "importo",
+                            "bg": "info"
+                        },
+                        {
+                            "value": "spedizione_gratuita",
+                            "bg": "success"
+                        }
+                    ],
+                    "default": "percentuale"
+                },
+                "validation": {
+                    "required": true
+                },
+                "default": "percentuale"
+            },
+            "value": {
+                "type": "DECIMAL",
+                "length": "10,2",
+                "input_type": "float",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false,
+                    "min": 0
+                }
+            },
+            "minOrder": {
+                "type": "DECIMAL",
+                "length": "10,2",
+                "input_type": "currency",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false,
+                    "min": 0
+                }
+            },
+            "startsAt": {
+                "type": "DATE",
+                "length": null,
+                "input_type": "date",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "endsAt": {
+                "type": "DATE",
+                "length": null,
+                "input_type": "date",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "maxUses": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "usedCount": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": 0
+            },
+            "active": {
+                "type": "INT",
+                "length": "1",
+                "input_type": "boolean",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": 1
+            }
+        },
+        "permissions": {
+            "0": {
+                "view": true,
+                "create": true,
+                "edit": true,
+                "delete": true
+            }
+        }
+    },
+    "review": {
+        "primary_key": "id",
+        "default_key": "title",
+        "description": "Recensioni dei clienti che hanno acquistato il prodotto. Visibili sul sito solo se status=approvata.",
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "default": 0,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "idProduct": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "externalEntity",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true,
+                    "entity": "product",
+                    "labelField": "name_it"
+                },
+                "validation": {
+                    "required": true
+                }
+            },
+            "idCustomer": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "externalEntity",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": false,
+                    "entity": "customer",
+                    "labelField": "email"
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "idOrder": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "externalEntity",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false,
+                    "entity": "shop_order",
+                    "labelField": "number"
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "authorName": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "rating": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": true,
+                    "min": 1,
+                    "max": 5
+                }
+            },
+            "title": {
+                "type": "VARCHAR",
+                "length": "200",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "body": {
+                "type": "TEXT",
+                "length": null,
+                "input_type": "text",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "status": {
+                "type": "VARCHAR",
+                "length": "30",
+                "input_type": "option",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true,
+                    "options": [
+                        {
+                            "value": "in_attesa",
+                            "bg": "warning"
+                        },
+                        {
+                            "value": "approvata",
+                            "bg": "success"
+                        },
+                        {
+                            "value": "rifiutata",
+                            "bg": "danger"
+                        }
+                    ],
+                    "default": "in_attesa"
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": "in_attesa"
+            },
+            "language": {
+                "type": "VARCHAR",
+                "length": "5",
+                "input_type": "option",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true,
+                    "options": [
+                        {
+                            "value": "it",
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": "en",
+                            "bg": "secondary"
+                        }
+                    ],
+                    "default": "it"
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": "it"
+            }
+        },
+        "permissions": {
+            "0": {
+                "view": true,
+                "create": true,
+                "edit": true,
+                "delete": true
+            }
+        }
+    },
+    "stock_alert": {
+        "primary_key": "id",
+        "default_key": "email",
+        "description": "Richieste 'avvisami quando torna disponibile'.",
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "default": 0,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "idVariant": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "externalEntity",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true,
+                    "entity": "product_variant",
+                    "labelField": "fullName"
+                },
+                "validation": {
+                    "required": true
+                }
+            },
+            "email": {
+                "type": "VARCHAR",
+                "length": "150",
+                "input_type": "email",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": true
+                }
+            },
+            "language": {
+                "type": "VARCHAR",
+                "length": "5",
+                "input_type": "option",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true,
+                    "options": [
+                        {
+                            "value": "it",
+                            "bg": "secondary"
+                        },
+                        {
+                            "value": "en",
+                            "bg": "secondary"
+                        }
+                    ],
+                    "default": "it"
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": "it"
+            },
+            "status": {
+                "type": "VARCHAR",
+                "length": "30",
+                "input_type": "option",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true,
+                    "options": [
+                        {
+                            "value": "attivo",
+                            "bg": "warning"
+                        },
+                        {
+                            "value": "notificato",
+                            "bg": "success"
+                        },
+                        {
+                            "value": "annullato",
+                            "bg": "secondary"
+                        }
+                    ],
+                    "default": "attivo"
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": "attivo"
+            },
+            "notifiedAt": {
+                "type": "DATETIME",
+                "length": null,
+                "input_type": "datetime",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                }
+            }
+        },
+        "permissions": {
+            "0": {
+                "view": true,
+                "create": true,
+                "edit": true,
+                "delete": true
+            }
+        }
+    },
+    "shipping_zone": {
+        "primary_key": "id",
+        "default_key": "name",
+        "description": "Zone di spedizione. countries = codici ISO2 separati da virgola (es. IT,SM,VA). freeThreshold = subtotale oltre cui la spedizione è gratuita.",
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "default": 0,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "name": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": true
+                }
+            },
+            "name_en": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "countries": {
+                "type": "VARCHAR",
+                "length": "500",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": true
+                }
+            },
+            "cost": {
+                "type": "DECIMAL",
+                "length": "10,2",
+                "input_type": "currency",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": true,
+                    "min": 0
+                }
+            },
+            "freeThreshold": {
+                "type": "DECIMAL",
+                "length": "10,2",
+                "input_type": "currency",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false,
+                    "min": 0
+                }
+            },
+            "deliveryDays": {
+                "type": "VARCHAR",
+                "length": "50",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "deliveryDays_en": {
+                "type": "VARCHAR",
+                "length": "50",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "active": {
+                "type": "INT",
+                "length": "1",
+                "input_type": "boolean",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": 1
+            },
+            "sortOrder": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": 0
+            }
+        },
+        "permissions": {
+            "0": {
+                "view": true,
+                "create": true,
+                "edit": true,
+                "delete": true
+            }
+        }
+    },
+    "shop_settings": {
+        "primary_key": "id",
+        "default_key": "shopName",
+        "description": "Impostazioni del negozio (una sola riga, id=1).",
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "default": 0,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "shopName": {
+                "type": "VARCHAR",
+                "length": "100",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": true
+                }
+            },
+            "notificationEmail": {
+                "type": "VARCHAR",
+                "length": "150",
+                "input_type": "email",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "contactEmail": {
+                "type": "VARCHAR",
+                "length": "150",
+                "input_type": "email",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "contactPhone": {
+                "type": "VARCHAR",
+                "length": "40",
+                "input_type": "phone",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "address": {
+                "type": "VARCHAR",
+                "length": "255",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "vatNumber": {
+                "type": "VARCHAR",
+                "length": "40",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "orderPrefix": {
+                "type": "VARCHAR",
+                "length": "10",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": "CA"
+            },
+            "reviewsAutoApprove": {
+                "type": "INT",
+                "length": "1",
+                "input_type": "boolean",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": true
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": 0
+            }
+        },
+        "permissions": {
+            "0": {
+                "view": true,
+                "create": true,
+                "edit": true,
+                "delete": true
+            }
+        }
+    },
+    "gyv_stock": {
+        "primary_key": "id",
+        "default_key": "fullName",
+        "description": "Giacenza attuale per variante (vista). stockValue = stock * prezzo.",
+        "columns": {
+            "id": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": false,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "date": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "lastUpdate": {
+                "type": "TIMESTAMP",
+                "length": "30",
+                "input_type": "datetime",
+                "null": false,
+                "default": "CURRENT_TIMESTAMP",
+                "on_update": "CURRENT_TIMESTAMP",
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "deleted": {
+                "type": "INT",
+                "length": "2",
+                "input_type": "boolean",
+                "null": false,
+                "default": 0,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                }
+            },
+            "idProduct": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "externalEntity",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": false,
+                    "entity": "product",
+                    "labelField": "name_it"
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "fullName": {
+                "type": "VARCHAR",
+                "length": "200",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "format": {
+                "type": "VARCHAR",
+                "length": "50",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": false,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "sku": {
+                "type": "VARCHAR",
+                "length": "60",
+                "input_type": "string",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "price": {
+                "type": "DECIMAL",
+                "length": "10,2",
+                "input_type": "currency",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "stock": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "lowStockThreshold": {
+                "type": "INT",
+                "length": "11",
+                "input_type": "number",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "stockStatus": {
+                "type": "VARCHAR",
+                "length": "30",
+                "input_type": "option",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": false,
+                    "options": [
+                        {
+                            "value": "esaurito",
+                            "bg": "danger"
+                        },
+                        {
+                            "value": "basso",
+                            "bg": "warning"
+                        },
+                        {
+                            "value": "ok",
+                            "bg": "success"
+                        }
+                    ]
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "stockValue": {
+                "type": "DECIMAL",
+                "length": "10,2",
+                "input_type": "currency",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                }
+            },
+            "active": {
+                "type": "INT",
+                "length": "1",
+                "input_type": "boolean",
+                "null": true,
+                "options": {
+                    "visible": true,
+                    "editable": false
+                },
+                "validation": {
+                    "required": false
+                },
+                "default": 0
+            }
+        },
+        "permissions": {
+            "0": {
+                "view": true,
+                "create": false,
+                "edit": false,
+                "delete": false
+            }
+        }
+    }
+}

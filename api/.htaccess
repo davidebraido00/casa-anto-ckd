@@ -1,0 +1,26 @@
+ErrorDocument 404 "<h1>Ops! Error 404</h1><p>Sorry but this page doesn't exist.</p>"
+ErrorDocument 403 "<h1>Ops! Error 403</h1><p>Access forbidden.</p>"
+
+AcceptPathInfo On
+RewriteEngine On
+
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+RewriteRule ^get_item/(.*)$ dispatcher.php?action=get_item&path=$1 [NC,L,QSA]
+RewriteRule ^get_items/(.*)$ dispatcher.php?action=get_items&path=$1 [NC,L,QSA]
+RewriteRule ^search_items/(.*)$ dispatcher.php?action=search_items&path=$1 [NC,L,QSA]
+RewriteRule ^get_item_simple/(.*)$ dispatcher.php?action=get_item_simple&path=$1 [NC,L,QSA]
+RewriteRule ^get_items_simple/(.*)$ dispatcher.php?action=get_items_simple&path=$1 [NC,L,QSA]
+RewriteRule ^search_items_simple/(.*)$ dispatcher.php?action=search_items_simple&path=$1 [NC,L,QSA]
+RewriteRule ^post/(.*)$ dispatcher.php?action=post&path=$1 [NC,L,QSA]
+RewriteRule ^delete/(.*)$ dispatcher.php?action=delete&path=$1 [NC,L,QSA]
+RewriteRule ^auth/(.*)$ user.php?action=$1 [NC,L,QSA]
+RewriteRule ^account/(.*)$ profile.php?action=$1 [NC,L,QSA]
+RewriteRule ^users/(.*)$ users_functions.php?action=$1 [NC,L,QSA]
+RewriteRule ^resource/(.*)$ file.php?action=$1 [NC,L,QSA]
+RewriteRule ^custom/(.*)$ custom_calls.php?action=$1 [NC,L,QSA]
+RewriteRule ^analytics/(.*)$ analytics.php?action=$1 [NC,L,QSA]
+RewriteRule ^ai/(.*)$ ai.php?action=$1 [NC,L,QSA]
+RewriteRule ^external_api/(.*)$ external_api.php?action=$1 [NC,L,QSA]
+RewriteRule ^utils/(.*)$ utils.php?action=$1 [NC,L,QSA]
+RewriteRule ^public/(.*)$ public_calls.php?action=$1 [NC,L,QSA]
